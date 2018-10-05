@@ -16,6 +16,7 @@ RSpec.describe MXNet::Gluon::BlockScope do
         expect(params.prefix).to eq('bar_')
 
         params_baz = MXNet::Gluon::ParameterDict.new('baz_')
+        p uhi: params_baz
         prefix, params = MXNet::Gluon::BlockScope.make_prefix_and_params('bar_', params_baz, 'foo')
         expect(prefix).to eq('bar_')
         expect(params.shared).to equal(params_baz)
